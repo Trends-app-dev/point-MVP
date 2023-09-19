@@ -12,7 +12,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: VITE_URL_BASE, // URL del backend
+        target: "https://point-mvp-j2g6-dev.fl0.io/", // URL del backend
         changeOrigin: true,
       },
     },
