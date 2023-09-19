@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { HiChat, HiLogout, HiUser } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,7 +27,7 @@ export const MainNavBar = () => {
   const userData = useSelector(selectUserProfile);
   const MySwal = withReactContent(Swal);
   const isSmallerThan768 = useMediaQuery("(max-width: 768px)");
- 
+
   const activeButtonBorder = isSmallerThan768
     ? "0px -3px 0px 0px"
     : "-3px 0px 0px 0px";
@@ -148,11 +149,7 @@ export const MainNavBar = () => {
           <HiChat size={"2rem"} color={"white"} />
         </button>
 
-        <button
-          onClick={handleLogout}
-          className={styles.button}
-          title="Salir"
-        >
+        <button onClick={handleLogout} className={styles.button} title="Salir">
           <HiLogout size={"2rem"} color={"white"} />
         </button>
 
