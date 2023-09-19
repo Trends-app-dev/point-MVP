@@ -1,0 +1,89 @@
+{
+    "gender":[
+        {"value":"masculino"},
+        {"value":"femenino"},
+        {"value":"otro"}
+    ],
+    "country":[
+        {"value":"Argentina"},
+        {"value":"Uruguay"},
+        {"value":"Chile"}
+    ],
+    "typeStudent":[
+        {"value":"Secundaria"},
+        {"value":"Universitario Junior"},
+        {"value":"Universitario Intermedio"},
+        {"value":"Universitario Avanzado"}
+    ],
+    "levelStudent":[
+        {"value":"Principiante"},
+        {"value":"En curso"},
+        {"value":"Avanzado"}
+    ],
+    "studyArea":[
+        {"value":"Finanzas"},
+        {"value":"Psicología"},
+        {"value":"Ingeniería de Software"},
+        {"value":"Marketing"}
+    ],
+    "goals":[
+        {"value":"Elegir Carrera"},
+        {"value":"Encontrar Pasantia"},
+        {"value":"Conocer Mercado"},
+        {"value":"Profundizar Estudios"},
+        {"value":"Elegir Especializacion"},
+        {"value":"Conocer Oportunidades"},
+        {"value":"Otros Objetivos"}
+    ],
+    "problematics":[
+        {"value":"No se que me gusta"},
+        {"value":"Falta informacion del mercado laboral"},
+        {"value":"Falta guia profesional"},
+        {"value":"Dificultad para encontrar trabajo"}
+    ],
+    "industry":[
+        {"value":"TI"},
+        {"value":"Energia"},
+        {"value":"Finanzas y Banca"},
+        {"value":"Educacion"},
+        {"value":"Entretenimiento y Medios"}
+    ],
+    "benefits":[
+        {"value":"Planes de seguro de salud"},
+        {"value":"Vacaciones pagadas y días libres"},
+        {"value":"Programas de capacitación y desarrollo profesional"},
+        {"value":"Oportunidades de crecimiento y ascenso dentro de la empresa"},
+        {"value":"Flexibilidad laboral"}
+    ],
+    "contracts":[
+        {"value":"Presencial"},
+        {"value":"Hibrido"},
+        {"value":"Remoto"}
+    ],
+    "availabilitys":[
+        {"value":"Full-Time"},
+        {"value":"Part-Time"}
+    ],
+    "industrySector":[
+        {"value":"Informática / Telecomunicaciones"},
+        {"value":"Medicina / Salud"},
+        {"value":"Ingeniería Civil"},
+        {"value":"Educación / Docencia"},
+        {"value":"Marketing / Publicidad"},
+        {"value":"Arquitectura"},
+        {"value":"Finanzas / Contabilidad"},
+        {"value":"Diseño Gráfico / Multimedia"},
+        {"value":"Psicología / Terapia"},
+        {"value":"Derecho / Legal"},
+        {"value":"Recursos Humanos"},
+        {"value":"Arte / Bellas Artes"},
+        {"value":"Ciencias Ambientales"},
+        {"value":"Gestión de Proyectos"},
+        {"value":"Periodismo / Comunicación"},
+        {"value":"Turismo / Hospitalidad"},
+        {"value":"Música / Artes Escénicas"},
+        {"value":"Agricultura / Agronomía"},
+        {"value":"Logística / Cadena de Suministro"}
+    ]
+
+}
