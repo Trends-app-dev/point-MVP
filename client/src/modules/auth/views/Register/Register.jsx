@@ -126,9 +126,6 @@ const Register = ({ type }) => {
 
       const { data } = await axios.get(`${VITE_URL}/user/profile`, {
         withCredentials: "include",
-        headers: {
-          "Access-Control-Allow-Origin": VITE_SELF,
-        },
       });
 
       if (data.type === "company") navigate("/company/feed");
@@ -139,7 +136,7 @@ const Register = ({ type }) => {
         icon: "error",
         position: "top-end",
         toast: true,
-        title: error.response.data.error || "Error del servidor",
+        title: error.response?.data?.error || "Error del servidor",
         showConfirmButton: false,
         timer: 2500,
         timerProgressBar: true,
