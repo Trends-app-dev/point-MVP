@@ -32,7 +32,7 @@ app.use(morgan("dev"));
 //     credentials: true,
 //   })
 // );
-server.use((req, res, next) => {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", CL_URL);
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
