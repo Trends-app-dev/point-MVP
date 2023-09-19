@@ -1,6 +1,5 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-const { VITE_URL_BASE } = import.meta.env;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://point-mvp-j2g6-dev.fl0.io/", // URL del backend
+        target: "https://point-mvp-j2g6-dev.fl0.io", // URL del backend
         changeOrigin: true,
       },
     },
