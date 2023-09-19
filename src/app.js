@@ -11,10 +11,7 @@ const bodyParser = require("body-parser");
 const passport = require("./auth/passport-config");
 
 //<---------------------Custom Middlewares--------------------->//
-const {
-  authenticateAdmin,
-  authenticateUser,
-} = require("./middlewares");
+const { authenticateAdmin, authenticateUser } = require("./middlewares");
 
 //<---------------------------Routes-------------------------->//
 const authRoutes = require("./routes/auth.routes");
@@ -49,6 +46,13 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Ruta para manejar las solicitudes OPTIONS preflight
+app.options("*", (req, res) => {
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.status(200).end();
+});
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/admin", authenticateAdmin, adminRoutes);
