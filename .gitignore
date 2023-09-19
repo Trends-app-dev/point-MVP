@@ -27,8 +27,6 @@ package-lock.json
 /client/public
 /client/node_modules
 /client/notes.txt
-/client/*.config.js
-/client/*.config
 /client/.env
 
 # Logs
@@ -39,9 +37,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-config
-tailwind.config.js
-vite.config.js
 refs/remotes/origin/main
 node_modules
 dist
@@ -58,6 +53,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Config files
-*.config.js

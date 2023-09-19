@@ -110,31 +110,17 @@ const Register = ({ type }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await fetch(
-        "https://cors-proxy-woad.vercel.app/",
-        {
-          method: "POST",
-          body: {
-            "my-url": URL_LOGIN,
-          },
-        },
-        {
-          user: inputs.email,
-          password: inputs.password,
-        },
-        { withCredentials: "include" }
+      await axios.post(URL, inputs).then(
+        async () =>
+          await axios.post(
+            URL_LOGIN,
+            {
+              user: inputs.email,
+              password: inputs.password,
+            },
+            { withCredentials: "include" }
+          )
       );
-      // await axios.post(URL, inputs).then(
-      //   async () =>
-      //     await axios.post(
-      //       URL_LOGIN,
-      //       {
-      //         user: inputs.email,
-      //         password: inputs.password,
-      //       },
-      //       { withCredentials: "include" }
-      //     )
-      // );
 
       dispatch(getUserInfo());
 
