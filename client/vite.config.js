@@ -19,7 +19,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        assetFileNames: "./src/assets/logos/logoClaro.png",
+        assetFileNames: "src/assets/logos/logoClaro.png",
       },
     },
   },
