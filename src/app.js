@@ -28,7 +28,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: CL_URL,
+    origin: "*",
     credentials: true,
   })
 );
