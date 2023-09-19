@@ -10,7 +10,7 @@ import { translateUserType } from "../../../../utils/helpers";
 import { checkboxInterests } from "../../data";
 import { validateRegister } from "../../utils";
 import styles from "./Register.module.css";
-const { VITE_URL, VITE_SELF } = import.meta.env;
+const { VITE_URL } = import.meta.env;
 
 /**
  * Componente para el formulario de registro.
