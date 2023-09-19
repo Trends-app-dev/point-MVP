@@ -3,7 +3,7 @@ const express = require("express");
 
 //<--------------------Middlewares libraries------------------->//
 const morgan = require("morgan");
-// const cors = require("cors");
+const cors = require("cors");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -11,7 +11,10 @@ const bodyParser = require("body-parser");
 const passport = require("./auth/passport-config");
 
 //<---------------------Custom Middlewares--------------------->//
-const { authenticateAdmin, authenticateUser } = require("./middlewares");
+const {
+  authenticateAdmin,
+  authenticateUser,
+} = require("./middlewares");
 
 //<---------------------------Routes-------------------------->//
 const authRoutes = require("./routes/auth.routes");
@@ -26,22 +29,12 @@ const chatroomRoutes = require("./routes/chatroom.routes");
 //<---------------------------Config-------------------------->//
 const app = express();
 app.use(morgan("dev"));
-// app.use(
-//   cors({
-//     origin: CL_URL,
-//     credentials: true,
-//   })
-// );
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-  next();
-});
+app.use(
+  cors({
+    origin: CL_URL,
+    credentials: true,
+  })
+);
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(bodyParser.json({ limit: "50mb" }));
