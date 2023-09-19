@@ -36,6 +36,9 @@
 
 .errorModal details {
   margin-bottom: 1.2rem;
+}
+
+.errorModal details summary {
   cursor: pointer;
 }
 

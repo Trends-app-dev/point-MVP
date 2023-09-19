@@ -1,16 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { getUserInfo } from "../../../../redux/usersSlice";
-import { validateRegister } from "../../utils";
-import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
-import styles from "./Register.module.css";
-import { checkboxInterests } from "../../data";
-import { translateUserType } from "../../../../utils/helpers";
 import { selectDarkMode } from "../../../../redux/uiSlice";
+import { getUserInfo } from "../../../../redux/usersSlice";
+import { translateUserType } from "../../../../utils/helpers";
+import { checkboxInterests } from "../../data";
+import { validateRegister } from "../../utils";
+import styles from "./Register.module.css";
 const { VITE_URL } = import.meta.env;
 
 /**
@@ -155,7 +154,7 @@ const Register = ({ type }) => {
     <div className={styles.BGContainer}>
       <div className={styles.Card}>
         <div className={styles.RightContainer}>
-          <form onSubmit={handleSubmit} style={{userSelect: "none"}}>
+          <form onSubmit={handleSubmit} style={{ userSelect: "none" }}>
             <h2>Crea tu cuenta de {translateUserType(type)}</h2>
             <div className={styles.Input}>
               <input
@@ -246,19 +245,16 @@ const Register = ({ type }) => {
               )}
             </div>
             {type !== "company" && (
-              <div style={{display: "flex", alignItems: "flex-start", }}>
+              <div style={{ display: "flex", alignItems: "flex-start" }}>
                 <input
                   id="remember"
                   type="checkbox"
                   className={styles.ui_checkbox}
-                  style={{flex: "none"}}
+                  style={{ flex: "none" }}
                   checked={inputs.support}
                   onChange={handleIsCheck}
                 />
-                <label
-                  htmlFor="remember"
-                  className={styles.support}
-                >
+                <label htmlFor="remember" className={styles.support}>
                   ¿
                   {type === "professional"
                     ? "Estás dispuesto a compartir tu experiencia con estudiantes"

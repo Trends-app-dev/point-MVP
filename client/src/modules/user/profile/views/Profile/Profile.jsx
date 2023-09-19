@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Animate } from "react-simple-animate";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { ImageUploadModal, ProfileUpdateModal } from "../../modals";
 import { selectDarkMode } from "../../../../../redux/uiSlice";
 import {
   getUserInfo,
@@ -13,6 +12,7 @@ import {
 } from "../../../../../redux/usersSlice";
 import { translateUserType } from "../../../../../utils/helpers";
 import { Avatar } from "../../../../chat/components/main";
+import { ImageUploadModal, ProfileUpdateModal } from "../../modals";
 import styles from "./Profile.module.css";
 
 const Profile = () => {

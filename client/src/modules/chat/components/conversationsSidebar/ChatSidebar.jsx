@@ -1,3 +1,4 @@
+import React from "react";
 import { ConversationHeader, ConversationList, ConversationSearchBar } from ".";
 import styles from "./ChatSidebar.module.css";
 

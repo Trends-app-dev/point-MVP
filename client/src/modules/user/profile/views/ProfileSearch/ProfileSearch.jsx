@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiChat } from "react-icons/hi";
 import { MdGroupAdd } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
