@@ -118,12 +118,7 @@ const Register = ({ type }) => {
               user: inputs.email,
               password: inputs.password,
             },
-            {
-              withCredentials: "include",
-              headers: {
-                "Access-Control-Allow-Origin": "*",
-              },
-            }
+            { withCredentials: "include" }
           )
       );
 
