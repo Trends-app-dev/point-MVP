@@ -7,7 +7,6 @@ import withReactContent from "sweetalert2-react-content";
 import { selectDarkMode } from "../../../../redux/uiSlice";
 import { getUserInfo } from "../../../../redux/usersSlice";
 import { translateUserType } from "../../../../utils/helpers";
-import api from "../../../../utils/security/api";
 import { checkboxInterests } from "../../data";
 import { validateRegister } from "../../utils";
 import styles from "./Register.module.css";
@@ -111,9 +110,9 @@ const Register = ({ type }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await api.post(URL, inputs).then(
+      await axios.post(URL, inputs).then(
         async () =>
-          await api.post(
+          await axios.post(
             URL_LOGIN,
             {
               user: inputs.email,
@@ -125,7 +124,7 @@ const Register = ({ type }) => {
 
       dispatch(getUserInfo());
 
-      const { data } = await api.get(`${VITE_URL}/user/profile`, {
+      const { data } = await axios.get(`${VITE_URL}/user/profile`, {
         withCredentials: "include",
       });
 
