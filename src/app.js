@@ -28,7 +28,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(
   cors({
-    origin: "*",
+    origin: CL_URL,
     credentials: true,
   })
 );
@@ -48,7 +48,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Ruta para manejar las solicitudes OPTIONS preflight
-app.options("*", (req, res) => {
+app.options(CL_URL, (req, res) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.status(200).end();
