@@ -122,15 +122,21 @@ const Register = ({ type }) => {
           )
       );
 
-      dispatch(getUserInfo());
+      dispatch(
+        getUserInfo().then((result) => {
+          if (result.data.type === "company") navigate("/company/feed");
+          else if (result.data.type === "admin") navigate("/admin/dashboard");
+          else navigate("/user/feed");
+        })
+      );
 
-      const { data } = await axios.get(`${VITE_URL}/user/profile`, {
-        withCredentials: "include",
-      });
+      // const { data } = await axios.get(`${VITE_URL}/user/profile`, {
+      //   withCredentials: "include",
+      // });
 
-      if (data.type === "company") navigate("/company/feed");
-      else if (data.type === "admin") navigate("/admin/dashboard");
-      else navigate("/user/feed");
+      // if (data.type === "company") navigate("/company/feed");
+      // else if (data.type === "admin") navigate("/admin/dashboard");
+      // else navigate("/user/feed");
     } catch (error) {
       MySwal.fire({
         icon: "error",
