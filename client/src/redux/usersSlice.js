@@ -199,7 +199,6 @@ export const loginUser = (inputs) => async (dispatch) => {
     const { data } = await axios.post(`${VITE_URL}/auth/login`, inputs, {
       withCredentials: "include",
     });
-    console.log("data: ", data);
     dispatch(getUserInfo()).then((result) => {
       return result;
     });

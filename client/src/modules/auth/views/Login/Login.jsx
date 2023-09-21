@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -6,10 +5,9 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import welcome from "../../../../assets/imagenes/welcome.png";
 import { selectDarkMode } from "../../../../redux/uiSlice";
-import { getUserInfo, loginUser } from "../../../../redux/usersSlice";
+import { loginUser } from "../../../../redux/usersSlice";
 import { validateLogin } from "../../utils";
 import styles from "./Login.module.css";
-const { VITE_URL } = import.meta.env;
 
 const Login = () => {
   const navigate = useNavigate();
