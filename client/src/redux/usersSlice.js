@@ -196,9 +196,10 @@ export const searchUsers = (type, page, query) => async () => {
 // Thunk para loguear un usuario
 export const loginUser = (inputs) => async (dispatch) => {
   try {
-    await axios.post(`${VITE_URL}/auth/login`, inputs, {
+    const { data } = await axios.post(`${VITE_URL}/auth/login`, inputs, {
       withCredentials: "include",
     });
+    console.log("token: ", data);
     dispatch(getUserInfo()).then((result) => {
       return result;
     });
