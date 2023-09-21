@@ -108,10 +108,10 @@ export const getProfessionals = createAsyncThunk(
     }
   }
 );
-export const getUserInfo = createAsyncThunk("users/getUserInfo", async (token) => {
+export const getUserInfo = createAsyncThunk("users/getUserInfo", async () => {
   try {
     const URL = `${VITE_URL}/user/profile`;
-    const { data } = await axios.get(URL, { headers: { Authorization: `Bearer ${token}` }, withCredentials: "include" });
+    const { data } = await axios.get(URL, { withCredentials: "include" });
 
     return data;
   } catch (error) {
@@ -196,11 +196,10 @@ export const searchUsers = (type, page, query) => async () => {
 // Thunk para loguear un usuario
 export const loginUser = (inputs) => async (dispatch) => {
   try {
-    const { data: token } = await axios.post(`${VITE_URL}/auth/login`, inputs, {
+    await axios.post(`${VITE_URL}/auth/login`, inputs, {
       withCredentials: "include",
     });
-    console.log("token: ", token);
-    dispatch(getUserInfo(token)).then((result) => {
+    dispatch(getUserInfo()).then((result) => {
       return result;
     });
   } catch (error) {

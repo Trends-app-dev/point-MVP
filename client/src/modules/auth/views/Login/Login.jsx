@@ -47,8 +47,6 @@ const Login = () => {
     if (inputs.user && inputs.password) {
       try {
         dispatch(loginUser(inputs)).then((result) => {
-          console.log("login user data: ", result)
-          
           if (result.data.type === "company") navigate("/company/feed");
           else if (result.data.type === "admin") navigate("/admin/dashboard");
           else navigate("/user/feed");
