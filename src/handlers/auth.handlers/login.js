@@ -1,4 +1,4 @@
-const { NODE_ENV, CL_URL } = require("../../../config");
+const { NODE_ENV } = require("../../../config");
 const { validateUser } = require("../../controllers/auth.controllers");
 
 module.exports = async (req, res) => {
@@ -23,8 +23,6 @@ module.exports = async (req, res) => {
       httpOnly: true,
       secure: NODE_ENV === "production",
       sameSite: "strict",
-      path: "/",
-      domain: "point-mvp.vercel.app",
     });
     res.status(200).json({ token });
     // res.status(200).json(token);
