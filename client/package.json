@@ -14,6 +14,7 @@
 		"@emoji-mart/data": "^1.1.2",
 		"@emoji-mart/react": "^1.1.1",
 		"@heroicons/react": "^1.0.6",
+		"@marcosdev.me/uselocalstorage": "^1.0.3",
 		"@reduxjs/toolkit": "^1.9.5",
 		"@tremor/react": "3.4.1",
 		"axios": "^1.4.0",

@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { useLocalStorage } from "@marcosdev.me/uselocalstorage";
 import axios from "axios";
 const { VITE_URL } = import.meta.env;
 
@@ -195,10 +196,15 @@ export const searchUsers = (type, page, query) => async () => {
 
 // Thunk para loguear un usuario
 export const loginUser = (inputs) => async (dispatch) => {
+  const { setStorageItem } = useLocalStorage();
+
   try {
-    await axios.post(`${VITE_URL}/auth/login`, inputs, {
+    const { data: token } = await axios.post(`${VITE_URL}/auth/login`, inputs, {
       withCredentials: "include",
     });
+
+    setStorageItem("token", token);
+
     dispatch(getUserInfo()).then((result) => {
       return result;
     });
