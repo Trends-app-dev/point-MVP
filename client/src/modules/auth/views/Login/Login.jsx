@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import welcome from "../../../../assets/imagenes/welcome.png";
 import { selectDarkMode } from "../../../../redux/uiSlice";
-import { getUserInfo } from "../../../../redux/usersSlice";
+import { getUserInfo, loginUser } from "../../../../redux/usersSlice";
 import { validateLogin } from "../../utils";
 import styles from "./Login.module.css";
 const { VITE_URL } = import.meta.env;
@@ -46,19 +46,13 @@ const Login = () => {
 
     if (inputs.user && inputs.password) {
       try {
-        await axios.post(`${VITE_URL}/auth/login`, inputs, {
-          withCredentials: "include",
+        dispatch(loginUser(inputs)).then((result) => {
+          console.log("login user data: ", result)
+          
+          if (result.data.type === "company") navigate("/company/feed");
+          else if (result.data.type === "admin") navigate("/admin/dashboard");
+          else navigate("/user/feed");
         });
-
-        dispatch(getUserInfo());
-
-        const { data } = await axios.get(`${VITE_URL}/user/profile`, {
-          withCredentials: "include",
-        });
-
-        if (data.type === "company") navigate("/company/feed");
-        else if (data.type === "admin") navigate("/admin/dashboard");
-        else navigate("/user/feed");
       } catch (error) {
         MySwal.fire({
           icon: "error",

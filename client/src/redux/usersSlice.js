@@ -193,6 +193,37 @@ export const searchUsers = (type, page, query) => async () => {
   }
 };
 
+// Thunk para loguear un usuario
+export const loginUser = (inputs) => async (dispatch) => {
+  try {
+    await axios.post(`${VITE_URL}/auth/login`, inputs, {
+      withCredentials: "include",
+    });
+    dispatch(getUserInfo()).then((result) => {
+      return result;
+    });
+  } catch (error) {
+    return error.response?.data?.error || error;
+  }
+};
+
+// Thunk para registrar un usuario
+export const registerUser = (inputs) => async (dispatch) => {
+  try {
+    await axios.post(`${VITE_URL}/auth/register`, inputs);
+    dispatch(
+      loginUser({
+        user: inputs.email,
+        password: inputs.password,
+      })
+    ).then((result) => {
+      return result;
+    });
+  } catch (error) {
+    return error.response?.data?.error || error;
+  }
+};
+
 export const selectAllUsers = (state) => state.users?.allUsers;
 export const selectSearchedUsers = (state) => state.users.searchedUsers;
 export const selectStudents = (state) => state.users.students;

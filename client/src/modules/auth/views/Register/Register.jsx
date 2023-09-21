@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { selectDarkMode } from "../../../../redux/uiSlice";
-import { getUserInfo } from "../../../../redux/usersSlice";
+import { getUserInfo, registerUser } from "../../../../redux/usersSlice";
 import { translateUserType } from "../../../../utils/helpers";
 import { checkboxInterests } from "../../data";
 import { validateRegister } from "../../utils";
@@ -109,26 +109,35 @@ const Register = ({ type }) => {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
+    
     try {
-      await axios.post(URL, inputs).then(
-        async () =>
-          await axios.post(
-            URL_LOGIN,
-            {
-              user: inputs.email,
-              password: inputs.password,
-            },
-            { withCredentials: "include" }
-          )
-      );
+      dispatch(registerUser(inputs)).then((result) => {
+        console.log("register user data: ", result);
 
-      dispatch(
-        getUserInfo().then((result) => {
-          if (result.data.type === "company") navigate("/company/feed");
-          else if (result.data.type === "admin") navigate("/admin/dashboard");
-          else navigate("/user/feed");
-        })
-      );
+        if (result.data.type === "company") navigate("/company/feed");
+        else if (result.data.type === "admin") navigate("/admin/dashboard");
+        else navigate("/user/feed");
+      });
+
+      // await axios.post(URL, inputs).then(
+      //   async () =>
+      //     await axios.post(
+      //       URL_LOGIN,
+      //       {
+      //         user: inputs.email,
+      //         password: inputs.password,
+      //       },
+      //       { withCredentials: "include" }
+      //     )
+      // );
+
+      // dispatch(
+      //   getUserInfo().then((result) => {
+      //     if (result.data.type === "company") navigate("/company/feed");
+      //     else if (result.data.type === "admin") navigate("/admin/dashboard");
+      //     else navigate("/user/feed");
+      //   })
+      // );
 
       // const { data } = await axios.get(`${VITE_URL}/user/profile`, {
       //   withCredentials: "include",
