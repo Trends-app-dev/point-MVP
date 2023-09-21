@@ -112,8 +112,8 @@ const Register = ({ type }) => {
     
     try {
       dispatch(registerUser(inputs)).then((result) => {
-        if (result.data.type === "company") navigate("/company/feed");
-        else if (result.data.type === "admin") navigate("/admin/dashboard");
+        if (result.type === "company") navigate("/company/feed");
+        else if (result.type === "admin") navigate("/admin/dashboard");
         else navigate("/user/feed");
       });
 
