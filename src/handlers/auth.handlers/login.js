@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
       secure: NODE_ENV === "production",
       sameSite: "strict",
     });
-    res.status(200).json("Login successfully.");
+    res.status(200).json({ token });
     // res.status(200).json(token);
   } catch (error) {
     res.status(400).json({ error: error.message });
