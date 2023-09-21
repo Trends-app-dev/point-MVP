@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { useLocalStorage } from "@marcosdev.me/uselocalstorage";
+import { useLocalStorage } from "uselocalstorage";
 import axios from "axios";
 const { VITE_URL } = import.meta.env;
 
