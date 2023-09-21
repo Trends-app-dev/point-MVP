@@ -45,30 +45,29 @@ const Login = () => {
     event.preventDefault();
 
     if (inputs.user && inputs.password) {
-      dispatch(loginUser(inputs)).then((result) => {
-        try {
+      try {
+        dispatch(loginUser(inputs)).then((result) => {
           if (result.type === "company") navigate("/company/feed");
           else if (result.type === "admin") navigate("/admin/dashboard");
           else navigate("/user/feed");
-        } catch (error) {
-          console.log(error)
-          MySwal.fire({
-            icon: "error",
-            position: "top-end",
-            toast: true,
-            title: error.response.data.error || "Error del servidor",
-            showConfirmButton: false,
-            timer: 2500,
-            timerProgressBar: true,
-            background: darkMode ? "#383636" : "#FFF",
-            color: darkMode ? "#FFF" : "#545454",
-            didOpen: (toast) => {
-              toast.addEventListener("mouseenter", Swal.stopTimer);
-              toast.addEventListener("mouseleave", Swal.resumeTimer);
-            },
-          });
-        }
-      });
+        });
+      } catch (error) {
+        MySwal.fire({
+          icon: "error",
+          position: "top-end",
+          toast: true,
+          title: error.response.data.error || "Error del servidor",
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: true,
+          background: darkMode ? "#383636" : "#FFF",
+          color: darkMode ? "#FFF" : "#545454",
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
+      }
     }
   };
 
