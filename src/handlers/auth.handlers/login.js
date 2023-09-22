@@ -20,7 +20,7 @@ module.exports = async (req, res) => {
     // res.header("Pragma", "no-cache");
 
     res.cookie("token", token, {
-      httpOnly: true,
+      httpOnly: false,
       secure: NODE_ENV === "production",
       sameSite: "strict",
     });
