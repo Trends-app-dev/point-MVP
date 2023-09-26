@@ -27,7 +27,7 @@ const chatroomRoutes = require("./routes/chatroom.routes");
 const app = express();
 app.use(morgan("dev"));
 app.use(
-	cors({ credentials: true })
+	cors({ origin: "*", credentials: true })
 	// comentado el CORS para levantar MVP
 	// cors({
 	// 	origin: CL_URL,
@@ -50,12 +50,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Ruta para manejar las solicitudes OPTIONS preflight
-app.options(CL_URL, (req, res) => {
-	// res.header("Access-Control-Allow-Origin", "*");
-	//res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-	//res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-	res.status(200).end();
-});
+// app.options(CL_URL, (req, res) => {
+// res.header("Access-Control-Allow-Origin", "*");
+//res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+// 	res.status(200).end();
+// });
+app.options("*", cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/admin", authenticateAdmin, adminRoutes);
