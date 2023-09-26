@@ -27,10 +27,10 @@ const chatroomRoutes = require("./routes/chatroom.routes");
 const app = express();
 app.use(morgan("dev"));
 app.use(
-  cors({
-    origin: CL_URL,
-    credentials: true,
-  })
+	cors({
+		origin: CL_URL,
+		credentials: true,
+	})
 );
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
@@ -38,20 +38,21 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-  session({
-    secret: JWT_KEY,
-    resave: false,
-    saveUninitialized: false,
-  })
+	session({
+		secret: JWT_KEY,
+		resave: false,
+		saveUninitialized: false,
+	})
 );
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Ruta para manejar las solicitudes OPTIONS preflight
 app.options(CL_URL, (req, res) => {
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.status(200).end();
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+	res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+	res.status(200).end();
 });
 
 app.use("/api/v1/auth", authRoutes);
