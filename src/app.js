@@ -27,7 +27,7 @@ const chatroomRoutes = require("./routes/chatroom.routes");
 const app = express();
 app.use(morgan("dev"));
 app.use(
-	cors()
+	cors({ credentials: true })
 	// comentado el CORS para levantar MVP
 	// cors({
 	// 	origin: CL_URL,
