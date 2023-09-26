@@ -3,7 +3,7 @@ const express = require("express");
 
 //<--------------------Middlewares libraries------------------->//
 const morgan = require("morgan");
-const cors = require("cors");
+// const cors = require("cors");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -26,14 +26,14 @@ const chatroomRoutes = require("./routes/chatroom.routes");
 //<---------------------------Config-------------------------->//
 const app = express();
 app.use(morgan("dev"));
-app.use(
-	cors({ origin: "*", credentials: true })
-	// comentado el CORS para levantar MVP
-	// cors({
-	// 	origin: CL_URL,
-	// 	credentials: true,
-	// })
-);
+// app.use(
+// 	cors({ origin: "*", credentials: true })
+// comentado el CORS para levantar MVP
+// cors({
+// 	origin: CL_URL,
+// 	credentials: true,
+// })
+// );
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -56,7 +56,7 @@ app.use(passport.session());
 //res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 // 	res.status(200).end();
 // });
-app.options("*", cors());
+// app.options("*", cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/admin", authenticateAdmin, adminRoutes);
