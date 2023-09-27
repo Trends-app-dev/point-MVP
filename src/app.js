@@ -28,13 +28,12 @@ const app = express();
 app.use(morgan("dev"));
 app.use(
 	// 	cors({ origin: "*", credentials: true })
-	// comentado el CORS para levantar MVP
 	cors({
 		origin: CL_URL,
 		credentials: true,
 	})
 );
-app.use(cors());
+
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -64,41 +63,6 @@ app.use(passport.session());
 // 	);
 // 	next();
 // });
-const corsMiddleware = function (req, res, next) {
-	const allowedHeaders = [
-		"Origin",
-		"X-Requested-With",
-		"Content-Type",
-		"Accept",
-		"X-CSRF-Token",
-		"X-Requested-With",
-		"Accept",
-		"Accept-Version",
-		"Content-Length",
-		"Content-MD5",
-		"Content-Type",
-		"Date",
-		"X-Api-Version",
-	];
-
-	res.header(
-		"Access-Control-Allow-Origin",
-		"https://point-mvp-git-main-trendsapp2023-gmailcom.vercel.app"
-	);
-	res.header("Access-Control-Allow-Credentials", true);
-	res.header(
-		"Access-Control-Allow-Methods",
-		"GET, OPTIONS, PATCH, DELETE, POST, PUT"
-	);
-	res.header("Access-Control-Allow-Headers", allowedHeaders.join(", "));
-
-	// Handle preflight requests
-	if (req.method === "OPTIONS") {
-		return res.sendStatus(200);
-	}
-
-	next();
-};
 
 app.options(CL_URL, (req, res) => {
 	const allowedHeaders = [
