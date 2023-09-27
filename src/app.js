@@ -26,14 +26,14 @@ const chatroomRoutes = require("./routes/chatroom.routes");
 //<---------------------------Config-------------------------->//
 const app = express();
 app.use(morgan("dev"));
-// app.use(
-// 	cors({ origin: "*", credentials: true })
-// comentado el CORS para levantar MVP
-// cors({
-// 	origin: CL_URL,
-// 	credentials: true,
-// })
-// );
+app.use(
+	// 	cors({ origin: "*", credentials: true })
+	// comentado el CORS para levantar MVP
+	cors({
+		origin: CL_URL,
+		credentials: true,
+	})
+);
 app.use(cors());
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
@@ -99,14 +99,33 @@ const corsMiddleware = function (req, res, next) {
 
 	next();
 };
-app.use(corsMiddleware);
-// app.options(CL_URL, (req, res) => {
-// res.header("Access-Control-Allow-Origin", "*");
-//res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-// 	res.status(200).end();
-// });
-// app.options("*", cors());
+
+app.options(CL_URL, (req, res) => {
+	const allowedHeaders = [
+		"Origin",
+		"X-Requested-With",
+		"Content-Type",
+		"Accept",
+		"X-CSRF-Token",
+		"X-Requested-With",
+		"Accept",
+		"Accept-Version",
+		"Content-Length",
+		"Content-MD5",
+		"Content-Type",
+		"Date",
+		"X-Api-Version",
+	];
+	res.header("Access-Control-Allow-Origin", CL_URL);
+	res.header(
+		"Access-Control-Allow-Methods",
+		"GET, OPTIONS, PATCH, DELETE, POST, PUT"
+	);
+	res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+	res.header("Access-Control-Allow-Headers", allowedHeaders.join(", "));
+	res.status(200).end();
+});
+app.options("*", cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/admin", authenticateAdmin, adminRoutes);
