@@ -3,7 +3,7 @@ const express = require("express");
 
 //<--------------------Middlewares libraries------------------->//
 const morgan = require("morgan");
-// const cors = require("cors");
+const cors = require("cors");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -34,6 +34,7 @@ app.use(morgan("dev"));
 // 	credentials: true,
 // })
 // );
+app.use(cors());
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use(bodyParser.json({ limit: "50mb" }));
