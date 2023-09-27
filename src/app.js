@@ -52,15 +52,53 @@ app.use(passport.session());
 
 // Ruta para manejar las solicitudes OPTIONS preflight
 
-app.use(function (req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
+// app.use(function (req, res, next) {
+// 	res.header(
+// 		"Access-Control-Allow-Origin",
+// 		"https://point-mvp-git-main-trendsapp2023-gmailcom.vercel.app"
+// 	);
+// 	res.header("Access-Control-Allow-Credentials", true);
+// 	res.header(
+// 		"Access-Control-Allow-Headers",
+// 		"Origin, X-Requested-With, Content-Type, Accept"
+// 	);
+// 	next();
+// });
+const corsMiddleware = function (req, res, next) {
+	const allowedHeaders = [
+		"Origin",
+		"X-Requested-With",
+		"Content-Type",
+		"Accept",
+		"X-CSRF-Token",
+		"X-Requested-With",
+		"Accept",
+		"Accept-Version",
+		"Content-Length",
+		"Content-MD5",
+		"Content-Type",
+		"Date",
+		"X-Api-Version",
+	];
+
+	res.header(
+		"Access-Control-Allow-Origin",
+		"https://point-mvp-git-main-trendsapp2023-gmailcom.vercel.app"
+	);
 	res.header("Access-Control-Allow-Credentials", true);
 	res.header(
-		"Access-Control-Allow-Headers",
-		"Origin, X-Requested-With, Content-Type, Accept"
+		"Access-Control-Allow-Methods",
+		"GET, OPTIONS, PATCH, DELETE, POST, PUT"
 	);
+	res.header("Access-Control-Allow-Headers", allowedHeaders.join(", "));
+
+	// Handle preflight requests
+	if (req.method === "OPTIONS") {
+		return res.sendStatus(200);
+	}
+
 	next();
-});
+};
 // app.options(CL_URL, (req, res) => {
 // res.header("Access-Control-Allow-Origin", "*");
 //res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
