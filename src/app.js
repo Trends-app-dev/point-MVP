@@ -51,6 +51,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Ruta para manejar las solicitudes OPTIONS preflight
+
+app.use(function (req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Credentials", true);
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept"
+	);
+	next();
+});
 // app.options(CL_URL, (req, res) => {
 // res.header("Access-Control-Allow-Origin", "*");
 //res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
