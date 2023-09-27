@@ -99,6 +99,7 @@ const corsMiddleware = function (req, res, next) {
 
 	next();
 };
+app.use(corsMiddleware);
 // app.options(CL_URL, (req, res) => {
 // res.header("Access-Control-Allow-Origin", "*");
 //res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
