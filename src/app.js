@@ -125,7 +125,6 @@ app.options(CL_URL, (req, res) => {
 	res.header("Access-Control-Allow-Headers", allowedHeaders.join(", "));
 	res.status(200).end();
 });
-app.options("*", cors());
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/admin", authenticateAdmin, adminRoutes);
