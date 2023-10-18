@@ -136,11 +136,8 @@ const Feed = () => {
         )}
 
         <div id="container" className="ml-[3rem] w-full">
-          <header className="header z-50 bg-blue-500 h-16 flex items-center justify-center backdrop-blur-md sticky top-0 animate-adjust-header select-none dark:bg-[#232323]">
-            <img
-              className="max-w-11 transition-max-w duration-300 ease-in-out"
-              src={logoBlancoBig}
-            />
+          <header className="header z-[111] bg-[#58c9e5] h-[6rem] flex items-center justify-center backdrop-blur-[5px] sticky top-[-33px] select-none dark:bg-[#232323]">
+            <img className="max-w-[4.4rem]" src={logoBlancoBig} />
           </header>
           <div
             id="feed"
