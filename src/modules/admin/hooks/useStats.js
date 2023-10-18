@@ -1,6 +1,6 @@
 import axios from "axios";
 import { format } from "date-fns";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 const { VITE_URL } = import.meta.env;
 const STUDENT = "student";
 const PROFESSIONAL = "professional";

@@ -1,6 +1,6 @@
 import axios from "axios";
 const { VITE_URL } = import.meta.env;
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const useCreateAdmin = () => {
   const [inputs, setInputs] = useState({
