@@ -1,15 +1,15 @@
 import axios from "axios";
+import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { HiChat, HiLogout, HiUser } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import useLocalStorage from "../../../hooks/useLocalStorage";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import { chatLogout } from "../../../redux/chatSlice";
 import { persistor } from "../../../redux/store";
-import { selectDarkMode, setDarkMode } from "../../../redux/uiSlice";
+import { selectDarkMode } from "../../../redux/uiSlice";
 import { selectUserProfile, userLogout } from "../../../redux/usersSlice";
 import DarkMode from "../../DarkMode";
 import styles from "./MainNavBar.module.css";
