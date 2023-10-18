@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import { LandingNavBar, MainNavBar } from "./components/navbars";
 import Router from "./routes";
@@ -13,7 +12,7 @@ function App() {
   const showNavBar =
     !authPaths.test(location.pathname) &&
     !adminPaths.test(location.pathname) &&
-    !notFoundPath.test(location.pathname);
+    !notFoundPath.test(location.pathname)
 
   return (
     <ErrorBoundary>

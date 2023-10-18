@@ -111,23 +111,23 @@
     }
 }
 
-:global(.dark-mode) .container{
+:global(.dark) .container{
     background-color: #383636
 }
-:global(.dark-mode) .left{
+:global(.dark) .left{
     background-color: #383636;
 }
-:global(.dark-mode) .button{
+:global(.dark) .button{
     background-color: #383636;
 }
-:global(.dark-mode) .icon{
+:global(.dark) .icon{
     color: #9AC2EF;
 }
 
-:global(.dark-mode) .left p{
+:global(.dark) .left p{
     color: #9AC2EF;
 }
-:global(.dark-mode) .left{
+:global(.dark) .left{
     border: 1px solid #CCB5A5;
 }
 

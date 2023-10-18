@@ -405,42 +405,42 @@
   opacity: 1;
 }
 
-:global(.dark-mode) .modal_container {
+:global(.dark) .modal_container {
   background-color: #383636;
 }
-:global(.dark-mode) .modal_header h2 {
+:global(.dark) .modal_header h2 {
   color: #fff;
 }
-:global(.dark-mode) .modal_content input {
+:global(.dark) .modal_content input {
   background-color: #383636;
   color: #d9d9d9;
   border: 1px solid #202020;
 }
-:global(.dark-mode) .modal_content input:hover {
+:global(.dark) .modal_content input:hover {
   border: 1px solid #7a7a7a;
 }
-:global(.dark-mode) .modal_content input:focus {
+:global(.dark) .modal_content input:focus {
   border: 1px solid #b8b8b8;
 }
-:global(.dark-mode) .user_card:hover {
+:global(.dark) .user_card:hover {
   background-color: #242424;
 }
-:global(.dark-mode) .user_card h4,
-:global(.dark-mode) .searchbar {
+:global(.dark) .user_card h4,
+:global(.dark) .searchbar {
   color: #fff;
 }
-:global(.dark-mode) .user_type {
+:global(.dark) .user_type {
   color: #b8b8b8;
 }
-:global(.dark-mode) .modal_content .page_button:disabled {
+:global(.dark) .modal_content .page_button:disabled {
   color: #666;
 }
-:global(.dark-mode) .modal_content p {
+:global(.dark) .modal_content p {
   color: #d9d9d9;
 }
-:global(.dark-mode) .searchbar select {
+:global(.dark) .searchbar select {
   background: #383836;
 }
-:global(.dark-mode) .searchbar select option {
+:global(.dark) .searchbar select option {
   background: #202020;
 }

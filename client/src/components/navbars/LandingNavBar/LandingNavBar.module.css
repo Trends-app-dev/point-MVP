@@ -165,45 +165,45 @@
 }
 
 /* Estilos para el modo oscuro */
-:global(.dark-mode) .navigation {
+:global(.dark) .navigation {
   background-color: #232323;
   color: #fab180;
 }
 
-:global(.dark-mode) .auth-buttons button {
+:global(.dark) .auth-buttons button {
   /* background-color: #fab180; */
   color: #232323;
 }
 
-/* :global(.dark-mode) .auth-buttons button:hover {
+/* :global(.dark) .auth-buttons button:hover {
   background-color: #9ac2ef;
 } */
 
-:global(.dark-mode) .auth-buttons a {
+:global(.dark) .auth-buttons a {
   /* background-color: #fab180; */
   color: #232323;
 }
-/* :global(.dark-mode) .auth-buttons :hover {
+/* :global(.dark) .auth-buttons :hover {
   color: #fff;
 } */
 
-/* :global(.dark-mode) .auth-buttons a:hover {
+/* :global(.dark) .auth-buttons a:hover {
   background-color: #9ac2ef;
 } */
 
-:global(.dark-mode) .register-options {
+:global(.dark) .register-options {
   background-color: #4b5965;
 }
 
-:global(.dark-mode) .register-options a {
+:global(.dark) .register-options a {
   color: #232323;
 }
 
-:global(.dark-mode) .register-options a:hover {
+:global(.dark) .register-options a:hover {
   background-color: #58c9e5;
 }
 
-:global(.dark-mode) .dark-mode-button button {
+:global(.dark) .dark-mode-button button {
   background-color: #08121b00;
   color: #d9d9d9;
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import styles from "./FloatingButton.module.css";
 
 export const FloatingButton = () => {
   const [showButton, setShowButton] = useState(false);
@@ -24,10 +23,10 @@ export const FloatingButton = () => {
   };
 
   return (
-    <div className={styles.ButtonContainer}>
+    <div className="button-container fixed bottom-5 right-5 select-none">
       {showButton && (
         <button
-          className={styles.UpButton}
+          className="bg-[#58c9e5] text-white text-[27px] border-none rounded-full w-12 h-12 transition-all hover:bg-[#66d8f5] dark:bg-[#ccc] dark:text-[#1e242a]"
           onClick={scrollToTop}
           title="Volver arriba"
         >

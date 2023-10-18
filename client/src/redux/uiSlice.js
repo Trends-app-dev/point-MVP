@@ -25,6 +25,6 @@ const uiSlice = createSlice({
 export const { setDarkMode, uiOut } = uiSlice.actions;
 
 // export const selectCurrentPage = (state) => state.ui.currentPage;
-export const selectDarkMode = (state) => state.ui.darkMode;
+export const selectDarkMode = (state) => state?.ui.darkMode;
 
 export default uiSlice.reducer;

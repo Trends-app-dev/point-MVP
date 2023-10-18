@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Animate, AnimateGroup } from "react-simple-animate";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import logoBlancoBig from "../../../../assets/logos/logoBlancoBig.png";
+import useLocalStorage from "../../../../hooks/useLocalStorage";
 import { selectDarkMode } from "../../../../redux/uiSlice";
 import {
   getProfessionals,
@@ -40,6 +41,7 @@ const Feed = () => {
   const [userToAddToGroup, setUserToAddToGroup] = useState(null);
   const MySwal = withReactContent(Swal);
 
+console.log(darkMode)
   // Mensaje de aviso para completar el perfil
   useEffect(() => {
     profile?.kind === "new" &&

@@ -1,5 +1,4 @@
 import { LineChart, TabPanel, Text } from "@tremor/react";
-import React from "react";
 
 export const AllUsersCharts = ({ data }) => {
   return (

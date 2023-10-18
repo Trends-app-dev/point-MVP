@@ -72,14 +72,14 @@ p {
   }
 }
 
-/* :global(.dark-mode) .message_content p {
+/* :global(.dark) .message_content p {
   background: #9d9d9d none repeat scroll 0 0;
   color: #000;
 } */
-:global(.dark-mode) .message_sent_content p {
+:global(.dark) .message_sent_content p {
   background: #383636;
   color: #d1d1d1;
 }
-:global(.dark-mode) .message_author {
+:global(.dark) .message_author {
   color: #fff;
 }

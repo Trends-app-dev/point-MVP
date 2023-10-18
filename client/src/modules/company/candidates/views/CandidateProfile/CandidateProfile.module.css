@@ -107,15 +107,15 @@
         margin-bottom: 0.1rem;
 }
 
-:global(.dark-mode) .header{
+:global(.dark) .header{
     background-color: #FAB180;
 }
-:global(.dark-mode) .header h1{
+:global(.dark) .header h1{
     color: #344C5A ;
 }
-:global(.dark-mode) .body h1{
+:global(.dark) .body h1{
     color: #CCB5A5;
 }
-:global(.dark-mode) .body h3{
+:global(.dark) .body h3{
     color: #CCB5A5;
 }

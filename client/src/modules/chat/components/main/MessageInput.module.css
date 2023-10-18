@@ -54,21 +54,21 @@
   cursor: pointer;
 }
 
-:global(.dark-mode) .message_input {
+:global(.dark) .message_input {
   background-color: #242424;
   border-top: 1px solid #383836;
 }
-:global(.dark-mode) .message_input input {
+:global(.dark) .message_input input {
   background-color: #383836;
   color: #d9d9d9;
   border: 1px solid #202020;
 }
-:global(.dark-mode) .message_input input:hover {
+:global(.dark) .message_input input:hover {
   border: 1px solid #7a7a7a;
 }
-:global(.dark-mode) .message_input input:focus {
+:global(.dark) .message_input input:focus {
   border: 1px solid #b8b8b8;
 }
-:global(.dark-mode) .message_input button {
+:global(.dark) .message_input button {
   color: #9d9d9d;
 }

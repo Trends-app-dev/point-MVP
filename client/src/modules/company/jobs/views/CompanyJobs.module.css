@@ -41,29 +41,29 @@
     padding-left: 1vw;
     padding-right: 1vw;
 }
-:global(.dark-mode) .head{
+:global(.dark) .head{
     background-color: #383636;
 }
-:global(.dark-mode) .body{
+:global(.dark) .body{
     background-color: #383636;
     border-top: 1px solid #CCB5A5;
 }
-:global(.dark-mode) .head {
+:global(.dark) .head {
     background-color: #383636;
 }
-:global(.dark-mode) .head h1{
+:global(.dark) .head h1{
     color: #CCB5A5;
 }
-:global(.dark-mode) .body h1{
+:global(.dark) .body h1{
     color: #CCB5A5;
 }
-:global(.dark-mode) .body h3{
+:global(.dark) .body h3{
     color: #CCB5A5;
 }
-:global(.dark-mode) .button{
+:global(.dark) .button{
     color: #383636
 }
-:global(.dark-mode) .postJob{
+:global(.dark) .postJob{
     border: 1px solid #C4C4C4;
     margin: 10px;
     padding-top: 1rem;

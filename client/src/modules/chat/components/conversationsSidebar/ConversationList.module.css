@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 
-:global(.dark-mode) .conversation_list {
+:global(.dark) .conversation_list {
   color: #fff;
   background-color: #202020;
   border-right: 1px solid #383836;

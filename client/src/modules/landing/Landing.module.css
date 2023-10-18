@@ -92,30 +92,30 @@
   color: #0056b3;
 }
 
-:global(.dark-mode) .LandingContainer {
+:global(.dark) .LandingContainer {
   background-color: #383636;
   background-image: url("../../assets/imagenes/LandMo.png");
 }
 
 /* Estilos para el modo oscuro */
-:global(.dark-mode) .card {
+:global(.dark) .card {
   background-color: #232323;
   color: #ffffff;
 }
 
-/* :global(.dark-mode) .card h1 {
+/* :global(.dark) .card h1 {
   color: #fab180;
 } */
 
-:global(.dark-mode) .card h2 {
+:global(.dark) .card h2 {
   color: #fff;
 }
 
-:global(.dark-mode) .card p {
+:global(.dark) .card p {
   color: #d9d9d9;
 }
 
-/* :global(.dark-mode) .Link {
+/* :global(.dark) .Link {
   color: #fab180;
 } */
 

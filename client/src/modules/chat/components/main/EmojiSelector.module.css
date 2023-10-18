@@ -23,7 +23,7 @@ em-emoji-picker {
   right: 40px;
 }
 
-:global(.dark-mode) em-emoji-picker {
+:global(.dark) em-emoji-picker {
   --rgb-background: 56, 56, 54; 
   --rgb-color: 255, 255, 255;
   --rgb-input: 56, 56, 54;

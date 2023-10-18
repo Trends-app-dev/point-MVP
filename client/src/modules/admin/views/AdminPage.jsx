@@ -1,5 +1,4 @@
 import { Card, Tab, TabGroup, TabList, TabPanels } from "@tremor/react";
-import React from "react";
 import { AdminStats, CreateForm } from "../components";
 
 const AdminPage = () => {

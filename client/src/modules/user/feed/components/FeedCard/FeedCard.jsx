@@ -1,4 +1,3 @@
-import React from "react";
 import { HiAcademicCap, HiBriefcase, HiChat, HiUser } from "react-icons/hi";
 import { MdGroupAdd } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,7 +7,6 @@ import { createNewPrivateChat } from "../../../../../redux/chatSlice";
 import { selectDarkMode } from "../../../../../redux/uiSlice";
 import { selectUserProfile } from "../../../../../redux/usersSlice";
 import { Avatar } from "../../../../chat/components/main";
-import styles from "./FeedCard.module.css";
 
 export const FeedCard = ({ user, handleAddToGroup }) => {
   const dispatch = useDispatch();
@@ -28,50 +26,59 @@ export const FeedCard = ({ user, handleAddToGroup }) => {
   };
 
   return (
-    <div className={styles.card}>
-      <div className={styles.card_avatar_container}>
-        <div className={styles.card_image} onClick={handleProfile}>
-          <Avatar
-            imageUrl={user.user.profile_image}
-            altText={user.user.name}
-            size={"8rem"}
-            status={user.user.status}
-            type={"feed"}
-          />
-        </div>
+    <div className="card rounded-lg flex flex-row bg-white dark:bg-[#383636] m-10 cursor-default shadow-md max-md:flex-col items-center">
+      <div
+        className="relative inline-block cursor-pointer select-none m-6 h-32 w-32"
+        onClick={handleProfile}
+      >
+        <Avatar
+          imageUrl={user.user.profile_image}
+          altText={user.user.name}
+          status={user.user.status}
+          type={"feed"}
+        />
       </div>
 
-      <div className={styles.card_profile}>
-        <div className={styles.name_icons}>
-          <div className={styles.name_type}>
-            <h1 onClick={handleProfile}>{user.user.name}</h1>
+      <div className="card_profile w-[85%] text-left ml-[1vw] pb-4">
+        <div className="name_icons flex flex-row items-center justify-between gap-[1vw] mt-2 max-sm:flex-col max-sm:mt-0">
+          <div className="name_type flex items-center max-md:flex-col max-md:items-start">
+            <h1
+              className="font-[Rubik] font-medium text-lg text-left px-4 text-blue-300 cursor-pointer hover:text-blue-500 dark:text-white mt-0 mb-0 pb-0 max-sm:text-center"
+              onClick={handleProfile}
+            >
+              {user.user.name}
+            </h1>
 
             {user.user.type === "student" ? (
               <>
                 <HiAcademicCap
-                  className={styles.icon}
+                  className="icon w-5 h-5 m-[1rem] flex-none max-md:hidden"
                   color={darkMode ? darkColor : lightColor}
                   title="Estudiante"
                 />
-                <span className={styles.user_type}>Estudiante</span>
+                <span className="user_type italic text-[#777] pl-4 hidden max-md:block">
+                  Estudiante
+                </span>
               </>
             ) : (
               <>
                 <HiBriefcase
-                  className={styles.icon}
+                  className="icon w-5 h-5 m-[1rem] flex-none max-md:hidden"
                   color={darkMode ? darkColor : lightColor}
                   title="Profesional"
                 />
-                <span className={styles.user_type}>Profesional</span>
+                <span className="user_type italic text-[#777] pl-4 hidden max-md:block">
+                  Profesional
+                </span>
               </>
             )}
           </div>
 
-          <div className={styles.card_buttons}>
+          <div className="card_buttons p-0 m-0">
             <button onClick={handleProfile} title="Ver perfil">
               <HiUser
                 size={isSmallerThan650 ? 25 : 20}
-                className={styles.icon}
+                className="icon w-5 h-5 m-[1rem] flex-none"
                 color={darkMode ? darkColor : lightColor}
               />
             </button>
@@ -79,7 +86,7 @@ export const FeedCard = ({ user, handleAddToGroup }) => {
             <button onClick={handleChats} title="Iniciar chat">
               <HiChat
                 size={isSmallerThan650 ? 25 : 20}
-                className={styles.icon}
+                className="icon w-5 h-5 m-[1rem] flex-none"
                 color={darkMode ? darkColor : lightColor}
               />
             </button>
@@ -90,25 +97,27 @@ export const FeedCard = ({ user, handleAddToGroup }) => {
             >
               <MdGroupAdd
                 size={isSmallerThan650 ? 25 : 20}
-                className={styles.icon}
+                className="icon w-5 h-5 m-[1rem] flex-none"
                 color={darkMode ? darkColor : lightColor}
               />
             </button>
           </div>
         </div>
 
-        <div className={styles.info_container}>
-          <h3 className={styles.subtitle}>
+        <div className="info_container flex flex-col">
+          <h3 className="subtitle font-[Rubik] text-base font-bold text-left px-4 my-2 text-gray-800 dark:text-[#d9d9d9]">
             {user.user.info_skills
               ? user.user.info_skills.join(" | ")
               : user.user.info_interests[0]}
             {user.user.profile_city || user.user.profile_country ? (
-              <p>
+              <p className="font-normal italic text-gray-700 dark:text-[#999]">
                 {`${user.user.profile_city}, ${user.user.profile_country}`}{" "}
               </p>
             ) : null}
           </h3>
-          <h3 className={styles.bio_container}>{user.user.profile_bio}</h3>
+          <h3 className="bio_container leading-5 font-[Rubik] text-base text-left px-4 my-2 text-gray-800 dark:text-[#d9d9d9]">
+            {user.user.profile_bio}
+          </h3>
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { useSelector } from "react-redux";

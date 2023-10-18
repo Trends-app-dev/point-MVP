@@ -50,12 +50,12 @@
   margin-left: auto;
 }
 
-:global(.dark-mode) .conversation_item {
+:global(.dark) .conversation_item {
   border-bottom: 1px solid #383836;
 }
-:global(.dark-mode) .conversation_item:hover {
+:global(.dark) .conversation_item:hover {
   background-color: #242424;
 }
-:global(.dark-mode) .conversation_details p {
+:global(.dark) .conversation_details p {
   color: #777;
 }

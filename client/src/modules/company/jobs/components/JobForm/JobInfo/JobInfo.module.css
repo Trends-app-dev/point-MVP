@@ -44,9 +44,9 @@
     padding-left: 10px;
     padding-right: 10px;    
 }
-:global(.dark-mode) .container h1{
+:global(.dark) .container h1{
     color: #CCB5A5;
 }
-:global(.dark-mode) .container h3{
+:global(.dark) .container h3{
     color: #CCB5A5;
 }

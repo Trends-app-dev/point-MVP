@@ -13,6 +13,6 @@
   color: #999;
 }
 
-:global(.dark-mode) .message_list {
+:global(.dark) .message_list {
   background-color: #242424;
 }

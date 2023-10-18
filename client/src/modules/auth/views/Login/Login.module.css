@@ -169,43 +169,43 @@
   font-size: 0.9rem;
 }
 
-:global(.dark-mode) {
+:global(.dark) {
   background-color: #777;
 }
-:global(.dark-mode) .Card,
-:global(.dark-mode) .RightContainer form,
-:global(.dark-mode) .LeftContainer > div,
-:global(.dark-mode) .RightContainer h2,
-:global(.dark-mode) .RightContainer .Bold {
+:global(.dark) .Card,
+:global(.dark) .RightContainer form,
+:global(.dark) .LeftContainer > div,
+:global(.dark) .RightContainer h2,
+:global(.dark) .RightContainer .Bold {
   color: white;
   background-color: #383636;
 }
 
-:global(.dark-mode) .RightContainer input,
-:global(.dark-mode) .RightContainer input::placeholder {
+:global(.dark) .RightContainer input,
+:global(.dark) .RightContainer input::placeholder {
   color: white;
   background-color: #272727;
 }
 
-:global(.dark-mode) .LeftContainer h1 {
+:global(.dark) .LeftContainer h1 {
   color: white;
 }
 
-:global(.dark-mode) .LeftContainer h3 {
+:global(.dark) .LeftContainer h3 {
   color: #d9d9d9;
 }
 
-/* :global(.dark-mode) .RightContainer button {
+/* :global(.dark) .RightContainer button {
     background-color: #FAB180 ;
     color: white;
 } */
 /* 
-:global(.dark-mode) .RightContainer button:disabled {
+:global(.dark) .RightContainer button:disabled {
     background-color: rgba(236, 189, 158, 0.348) ;
 } */
 
 @media screen and (max-width: 700px) {
-  :global(.dark-mode) .Card {
+  :global(.dark) .Card {
     background-color: transparent;
   }
   .Card {

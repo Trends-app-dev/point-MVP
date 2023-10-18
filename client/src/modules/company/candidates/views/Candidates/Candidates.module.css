@@ -129,19 +129,19 @@
     size: 60px;
     color:#232323;
 }
-:global(.dark-mode) .head h1{
+:global(.dark) .head h1{
     color: #CCB5A5;
 }
-:global(.dark-mode) .cardProfile h1{
+:global(.dark) .cardProfile h1{
     color: #CCB5A5;
 }
-:global(.dark-mode) .cardProfile h3{
+:global(.dark) .cardProfile h3{
     color: #CCB5A5;
 }
-:global(.dark-mode) .card{
+:global(.dark) .card{
     box-shadow: 2px 2px 4px rgba(196, 196, 196, 0.5);
 }
-:global(.dark-mode) .head{
+:global(.dark) .head{
     border-bottom: 1px solid #CCB5A5;
 }
 

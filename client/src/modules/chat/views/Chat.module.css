@@ -69,9 +69,9 @@ body {
   }
 }
 
-:global(.dark-mode) .chat_container {
+:global(.dark) .chat_container {
   background-color: #242424;
 }
-:global(.dark-mode) .empty_chat {
+:global(.dark) .empty_chat {
   background-color: #242424;
 }

@@ -199,44 +199,44 @@
   user-select: none;
 }
 
-:global(.dark-mode) {
+:global(.dark) {
   background-color: #777;
 }
-:global(.dark-mode) .Card,
-:global(.dark-mode) .RightContainer form,
-:global(.dark-mode) .LeftContainer > div,
-:global(.dark-mode) .RightContainer h2,
-:global(.dark-mode) .RightContainer .Bold {
+:global(.dark) .Card,
+:global(.dark) .RightContainer form,
+:global(.dark) .LeftContainer > div,
+:global(.dark) .RightContainer h2,
+:global(.dark) .RightContainer .Bold {
   background-color: #383636;
   color: white;
 }
 
-:global(.dark-mode) .RightContainer h2 {
+:global(.dark) .RightContainer h2 {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
-:global(.dark-mode) .RightContainer .field,
-:global(.dark-mode) .RightContainer .field::placeholder {
+:global(.dark) .RightContainer .field,
+:global(.dark) .RightContainer .field::placeholder {
   color: white;
   background-color: #272727;
 }
 
-:global(.dark-mode) .LeftContainer h1 {
+:global(.dark) .LeftContainer h1 {
   color: white;
 }
 
-:global(.dark-mode) .LeftContainer h3 {
+:global(.dark) .LeftContainer h3 {
   color: #ccb5a5;
 }
 
-:global(.dark-mode) .RightContainer button {
+:global(.dark) .RightContainer button {
   color: white;
   background-color: #fab180;
 }
 
-:global(.dark-mode) .RightContainer button:disabled {
+:global(.dark) .RightContainer button:disabled {
   background-color: #777;
 }
 

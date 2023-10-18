@@ -218,58 +218,58 @@
   }
 } */
 
-:global(.dark-mode) .info_sidebar {
+:global(.dark) .info_sidebar {
   background-color: #202020;
   border-left: 1px solid #383836;
 }
-:global(.dark-mode) .info_sidebar header {
+:global(.dark) .info_sidebar header {
   background-color: #202020;
   color: #fff;
   border-bottom: 1px solid #383836;
 }
-:global(.dark-mode) .image_container {
+:global(.dark) .image_container {
   background-color: #202020;
   border: 3px solid #121212;
 }
-:global(.dark-mode) .name {
+:global(.dark) .name {
   color: #fff;
 }
-:global(.dark-mode) .user_card,
-:global(.dark-mode) .options_menu li,
-:global(.dark-mode) .participants_options_menu li {
+:global(.dark) .user_card,
+:global(.dark) .options_menu li,
+:global(.dark) .participants_options_menu li {
   color: #d9d9d9;
 }
-:global(.dark-mode) .username,
-:global(.dark-mode) .interests,
-:global(.dark-mode) .participant_role,
-:global(.dark-mode) .role_list {
+:global(.dark) .username,
+:global(.dark) .interests,
+:global(.dark) .participant_role,
+:global(.dark) .role_list {
   color: #ccc;
 }
-:global(.dark-mode) .user_card:hover,
-:global(.dark-mode) .options_menu li:hover,
-:global(.dark-mode) .participants_options_menu li:hover {
+:global(.dark) .user_card:hover,
+:global(.dark) .options_menu li:hover,
+:global(.dark) .participants_options_menu li:hover {
   background-color: #242424;
 }
-:global(.dark-mode) .subtitle {
+:global(.dark) .subtitle {
   color: #fff;
   border-top: 1px solid #383836;
 }
-:global(.dark-mode) .options_menu,
-:global(.dark-mode) .participants_options_menu {
+:global(.dark) .options_menu,
+:global(.dark) .participants_options_menu {
   background-color: #383836;
 }
-:global(.dark-mode) .option_button {
+:global(.dark) .option_button {
   border: 2px solid #ccc;
 }
-:global(.dark-mode) .option_buttons_container {
+:global(.dark) .option_buttons_container {
   border-bottom: 1px solid #383836;
 }
-:global(.dark-mode) .participant_role select {
+:global(.dark) .participant_role select {
   background: #383836;
 }
-:global(.dark-mode) .participant_role select option {
+:global(.dark) .participant_role select option {
   background: #202020;
 }
-:global(.dark-mode) .online_participants {
+:global(.dark) .online_participants {
   color: #999;
 }

@@ -292,47 +292,47 @@
   }
 }
 
-:global(.dark-mode) .modal_container {
+:global(.dark) .modal_container {
   background-color: #383636;
 }
-:global(.dark-mode) .modal_header h2 {
+:global(.dark) .modal_header h2 {
   color: #fff;
 }
-:global(.dark-mode) .modal_content input {
+:global(.dark) .modal_content input {
   background-color: #383636;
   color: #d9d9d9;
   border: 1px solid #202020;
 }
-:global(.dark-mode) .modal_content input:hover {
+:global(.dark) .modal_content input:hover {
   border: 1px solid #7a7a7a;
 }
-:global(.dark-mode) .modal_content input:focus {
+:global(.dark) .modal_content input:focus {
   border: 1px solid #b8b8b8;
 }
 
-:global(.dark-mode) .bio_field {
+:global(.dark) .bio_field {
   background-color: transparent;
   border: #ccb5a5 solid 1px;
 }
-:global(.dark-mode) .subtitle {
+:global(.dark) .subtitle {
   color: #f5f5f5;
 }
-:global(.dark-mode) .option,
+:global(.dark) .option,
 details {
   color: #d9d9d9;
 }
-:global(.dark-mode) .option input,
+:global(.dark) .option input,
 summary {
   color: #b8b8b8;
 }
-:global(.dark-mode) .bio_field:hover {
+:global(.dark) .bio_field:hover {
   outline: #ccb5a5 solid 1px;
 }
-:global(.dark-mode) select {
+:global(.dark) select {
   background: #383836;
   border: 1px solid #202020;
   outline: none;
 }
-:global(.dark-mode) select option {
+:global(.dark) select option {
   background: #202020;
 }

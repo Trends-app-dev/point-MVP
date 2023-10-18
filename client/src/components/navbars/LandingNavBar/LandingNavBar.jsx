@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import logoClaro from "../../../assets/logos/logoClaro.png";
 import useMediaQuery from "../../../hooks/useMediaQuery";
-import { selectDarkMode, setDarkMode } from "../../../redux/uiSlice";
+import { selectDarkMode } from "../../../redux/uiSlice";
+import DarkMode from "../../DarkMode";
 import styles from "./LandingNavBar.module.css";
 
 /**
@@ -13,7 +14,6 @@ import styles from "./LandingNavBar.module.css";
  * @returns {React.Element} Componente LandingNavBar.
  */
 export const LandingNavBar = () => {
-  const dispatch = useDispatch();
   const location = useLocation();
   const darkMode = useSelector(selectDarkMode);
   const [showMenu, setShowMenu] = useState(false);
@@ -38,16 +38,6 @@ export const LandingNavBar = () => {
   }, [showMenu]);
 
   /**
-   * Alterna el modo oscuro en la aplicación.
-   */
-  function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-
-    dispatch(setDarkMode());
-  }
-
-  /**
    * Alterna la visibilidad del menú.
    */
   function toggleMenu() {
@@ -56,7 +46,7 @@ export const LandingNavBar = () => {
 
   return (
     <nav
-      className={`${styles.navigation} ${darkMode ? "dark-mode" : ""}`}
+      className={`${styles.navigation} ${darkMode ? "dark" : ""}`}
       style={{ userSelect: "none" }}
     >
       {/* Logo */}
@@ -127,13 +117,14 @@ export const LandingNavBar = () => {
 
       {/* Botón de modo oscuro */}
       <div className={styles["dark-mode-button"]}>
-        <button onClick={toggleDarkMode}>
+        <DarkMode color="#9ac2ef" />
+        {/* <button onClick={toggleDarkMode}>
           {darkMode ? (
             <i className="fas fa-sun"></i>
           ) : (
             <i className="fas fa-moon"></i>
           )}
-        </button>
+        </button> */}
       </div>
     </nav>
   );

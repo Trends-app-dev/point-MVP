@@ -1,5 +1,3 @@
-import React from "react";
-
 const Timestamp = ({ timestamp }) => {
   const formattedTimestamp = formatTimestamp(timestamp);
 

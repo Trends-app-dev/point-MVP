@@ -1,4 +1,3 @@
-import React from "react";
 import { TabPanel, Text, LineChart, Divider } from "@tremor/react";
 
 export const StudentsCharts = ({ studentData, chatsData, msgData }) => {

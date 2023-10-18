@@ -1,15 +1,16 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { selectDarkMode } from "../../../../redux/uiSlice";
-import { getUserInfo, registerUser } from "../../../../redux/usersSlice";
-import { translateUserType } from "../../../../utils/helpers";
-import { checkboxInterests } from "../../data";
+import { getUserInfo } from "../../../../redux/usersSlice";
 import { validateRegister } from "../../utils";
+import { HiOutlineEye, HiOutlineEyeOff } from "react-icons/hi";
 import styles from "./Register.module.css";
+import { checkboxInterests } from "../../data";
+import { translateUserType } from "../../../../utils/helpers";
+import { selectDarkMode } from "../../../../redux/uiSlice";
 const { VITE_URL } = import.meta.env;
 
 /**
@@ -109,47 +110,34 @@ const Register = ({ type }) => {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
     try {
-      dispatch(registerUser(inputs)).then((result) => {
-        if (result.type === "company") navigate("/company/feed");
-        else if (result.type === "admin") navigate("/admin/dashboard");
-        else navigate("/user/feed");
+      await axios.post(URL, inputs).then(
+        async () =>
+          await axios.post(
+            URL_LOGIN,
+            {
+              user: inputs.email,
+              password: inputs.password,
+            },
+            { withCredentials: "include" }
+          )
+      );
+
+      dispatch(getUserInfo());
+
+      const { data } = await axios.get(`${VITE_URL}/user/profile`, {
+        withCredentials: "include",
       });
 
-      // await axios.post(URL, inputs).then(
-      //   async () =>
-      //     await axios.post(
-      //       URL_LOGIN,
-      //       {
-      //         user: inputs.email,
-      //         password: inputs.password,
-      //       },
-      //       { withCredentials: "include" }
-      //     )
-      // );
-
-      // dispatch(
-      //   getUserInfo().then((result) => {
-      //     if (result.data.type === "company") navigate("/company/feed");
-      //     else if (result.data.type === "admin") navigate("/admin/dashboard");
-      //     else navigate("/user/feed");
-      //   })
-      // );
-
-      // const { data } = await axios.get(`${VITE_URL}/user/profile`, {
-      //   withCredentials: "include",
-      // });
-
-      // if (data.type === "company") navigate("/company/feed");
-      // else if (data.type === "admin") navigate("/admin/dashboard");
-      // else navigate("/user/feed");
+      if (data.type === "company") navigate("/company/feed");
+      else if (data.type === "admin") navigate("/admin/dashboard");
+      else navigate("/user/feed");
     } catch (error) {
       MySwal.fire({
         icon: "error",
         position: "top-end",
         toast: true,
-        title: error.response?.data?.error || "Error del servidor",
+        title: error.response.data.error || "Error del servidor",
         showConfirmButton: false,
         timer: 2500,
         timerProgressBar: true,
@@ -167,7 +155,7 @@ const Register = ({ type }) => {
     <div className={styles.BGContainer}>
       <div className={styles.Card}>
         <div className={styles.RightContainer}>
-          <form onSubmit={handleSubmit} style={{ userSelect: "none" }}>
+          <form onSubmit={handleSubmit} style={{userSelect: "none"}}>
             <h2>Crea tu cuenta de {translateUserType(type)}</h2>
             <div className={styles.Input}>
               <input
@@ -258,16 +246,19 @@ const Register = ({ type }) => {
               )}
             </div>
             {type !== "company" && (
-              <div style={{ display: "flex", alignItems: "flex-start" }}>
+              <div style={{display: "flex", alignItems: "flex-start", }}>
                 <input
                   id="remember"
                   type="checkbox"
                   className={styles.ui_checkbox}
-                  style={{ flex: "none" }}
+                  style={{flex: "none"}}
                   checked={inputs.support}
                   onChange={handleIsCheck}
                 />
-                <label htmlFor="remember" className={styles.support}>
+                <label
+                  htmlFor="remember"
+                  className={styles.support}
+                >
                   ¿
                   {type === "professional"
                     ? "Estás dispuesto a compartir tu experiencia con estudiantes"

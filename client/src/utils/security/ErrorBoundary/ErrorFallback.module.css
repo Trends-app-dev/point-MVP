@@ -38,10 +38,6 @@
   margin-bottom: 1.2rem;
 }
 
-.errorModal details summary {
-  cursor: pointer;
-}
-
 .scrollable {
   width: auto;
   overflow-y: scroll;

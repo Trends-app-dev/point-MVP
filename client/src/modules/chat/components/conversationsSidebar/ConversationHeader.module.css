@@ -49,16 +49,16 @@
   }
 }
 
-:global(.dark-mode) .header_container {
+:global(.dark) .header_container {
   border-bottom: 1px solid #383636;
 }
-:global(.dark-mode) .message_options li,
-:global(.dark-mode) .header_container p {
+:global(.dark) .message_options li,
+:global(.dark) .header_container p {
   color: #d9d9d9;
 }
-:global(.dark-mode) .message_options li:hover {
+:global(.dark) .message_options li:hover {
   background-color: #242424;
 }
-:global(.dark-mode) .message_options {
+:global(.dark) .message_options {
   background-color: #383836;
 }

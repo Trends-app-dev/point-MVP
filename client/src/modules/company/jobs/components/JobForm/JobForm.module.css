@@ -38,9 +38,9 @@
 .contentButton{
     text-align: center;
 }
-:global(.dark-mode) .button{
+:global(.dark) .button{
     color: #383636;
 }
-:global(.dark-mode) .header h1{
+:global(.dark) .header h1{
     color: #CCB5A5;
 }

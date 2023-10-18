@@ -1,5 +1,4 @@
 import { DonutChart, Legend, Text } from "@tremor/react";
-import React from "react";
 
 export const Donut = ({ donutData }) => {
   return (

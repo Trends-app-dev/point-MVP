@@ -18,7 +18,7 @@ h1 {
   line-height: 1.1;
 }
 
-body .dark-mode {
+body .dark {
   background-color: #242424;
 }
 
@@ -48,7 +48,7 @@ body .dark-mode {
 }
 
 /* Color del track en modo oscuro */
-.dark-mode ::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track {
   background: #202020;
 }
 

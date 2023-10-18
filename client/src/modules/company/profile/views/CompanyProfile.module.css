@@ -297,28 +297,28 @@
   }
 }
 
-:global(.dark-mode) .header {
+:global(.dark) .header {
   background-color: #fab180;
 }
-:global(.dark-mode) .header h1 {
+:global(.dark) .header h1 {
   color: #344c5a;
 }
-:global(.dark-mode) .infoContainer h1 {
+:global(.dark) .infoContainer h1 {
   color: #ccb5a5;
 }
-:global(.dark-mode) .infoContainer h3 {
+:global(.dark) .infoContainer h3 {
   color: #ccb5a5;
 }
-:global(.dark-mode) .profilePictureBasicInfoContainer {
+:global(.dark) .profilePictureBasicInfoContainer {
   background-color: #383636;
 }
-:global(.dark-mode) .userBasicInfoContainer {
+:global(.dark) .userBasicInfoContainer {
   background-color: #383636;
 }
-:global(.dark-mode) .userBasicInfoContainer h1 {
+:global(.dark) .userBasicInfoContainer h1 {
   color: #ccb5a5;
 }
-:global(.dark-mode) .userBasicInfoContainer h3 {
+:global(.dark) .userBasicInfoContainer h3 {
   color: #ccb5a5;
 }
 

@@ -72,15 +72,15 @@
   }
 }
 
-:global(.dark-mode) .BGContainer {
+:global(.dark) .BGContainer {
   background-color: #242424;
 }
-:global(.dark-mode) .BGContainer header {
+:global(.dark) .BGContainer header {
   background-color: #232323;
 }
-:global(.dark-mode) {
+:global(.dark) {
   --header-bg-color: #2323238b;
 }
-:global(.dark-mode) .Feed {
+:global(.dark) .Feed {
   background-color: #343436;
 }

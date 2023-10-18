@@ -1,16 +1,17 @@
 import axios from "axios";
-import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { HiChat, HiLogout, HiUser } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import useLocalStorage from "../../../hooks/useLocalStorage";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 import { chatLogout } from "../../../redux/chatSlice";
 import { persistor } from "../../../redux/store";
 import { selectDarkMode, setDarkMode } from "../../../redux/uiSlice";
 import { selectUserProfile, userLogout } from "../../../redux/usersSlice";
+import DarkMode from "../../DarkMode";
 import styles from "./MainNavBar.module.css";
 const { VITE_URL } = import.meta.env;
 
@@ -23,8 +24,8 @@ const { VITE_URL } = import.meta.env;
 export const MainNavBar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const darkMode = useSelector(selectDarkMode);
   const userData = useSelector(selectUserProfile);
+  const darkMode = useSelector(selectDarkMode);
   const MySwal = withReactContent(Swal);
   const isSmallerThan768 = useMediaQuery("(max-width: 768px)");
 
@@ -70,7 +71,7 @@ export const MainNavBar = () => {
       const URL = `${VITE_URL}/auth/logout`;
       await axios.post(URL, { withCredentials: "include" });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -94,14 +95,6 @@ export const MainNavBar = () => {
         setActiveColor("transparent");
       }
     });
-  };
-
-  // Alterna el modo oscuro en la aplicación.
-  const toggleDarkMode = () => {
-    const body = document.body;
-    body.classList.toggle("dark-mode");
-
-    dispatch(setDarkMode());
   };
 
   return (
@@ -153,17 +146,7 @@ export const MainNavBar = () => {
           <HiLogout size={"2rem"} color={"white"} />
         </button>
 
-        <button
-          className={styles.button}
-          onClick={toggleDarkMode}
-          title="Modo Oscuro/Claro"
-        >
-          {darkMode ? (
-            <i className="fas fa-sun text-3xl" style={{ color: "white" }} />
-          ) : (
-            <i className="fas fa-moon text-3xl" style={{ color: "white" }} />
-          )}
-        </button>
+        <DarkMode color="white" />
       </div>
     </>
   );
