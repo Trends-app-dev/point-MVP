@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { AiFillCheckCircle, AiFillCloseCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -27,7 +27,7 @@ export const Message = ({
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const textareaRef = React.useRef(null);
+  const textareaRef = useRef(null);
   const user = useSelector(selectUserProfile);
   const darkMode = useSelector(selectDarkMode);
   const activeConversation = useSelector(selectActiveConversation);

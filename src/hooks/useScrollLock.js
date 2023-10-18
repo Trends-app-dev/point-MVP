@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useLayoutEffect, useRef } from "react";
 
 /**
  * Custom hook para bloquear y desbloquear el desplazamiento de la página.
@@ -7,15 +7,15 @@ import React from "react";
  */
 export const useScrollLock = () => {
   // Almacenamos el valor original de overflow
-  const originalOverflow = React.useRef("");
+  const originalOverflow = useRef("");
 
   // Almacenamos el valor original de paddingRight
-  const originalPaddingRight = React.useRef("");
+  const originalPaddingRight = useRef("");
 
   /**
    * Bloquea el desplazamiento de la página.
    */
-  const lockScroll = React.useCallback(() => {
+  const lockScroll = useCallback(() => {
     document.body.style.overflow = "hidden";
     document.body.style.paddingRight = "var(--scrollbar-compensation)";
     document.body.dataset.scrollLock = "true";
@@ -24,7 +24,7 @@ export const useScrollLock = () => {
   /**
    * Desbloquea el desplazamiento de la página.
    */
-  const unlockScroll = React.useCallback(() => {
+  const unlockScroll = useCallback(() => {
     document.body.style.overflow = originalOverflow.current;
     document.body.style.paddingRight = originalPaddingRight.current;
 
@@ -32,7 +32,7 @@ export const useScrollLock = () => {
   }, []);
 
   // Ajusta la compensación de la barra de desplazamiento
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     const scrollBarCompensation = window.innerWidth - document.body.offsetWidth;
     document.body.style.setProperty(
       "--scrollbar-compensation",
