@@ -84,7 +84,6 @@ export const useStats = () => {
     const res = await axios.get(`${VITE_URL}/admin/users`, {
       withCredentials: "include",
     });
-    // console.log(res.ok);
     // if (!res.ok) throw res;
     return res.data;
   };
@@ -93,7 +92,6 @@ export const useStats = () => {
     const fetchData = async () => {
       try {
         const data = await getUsers();
-        // console.log(data);
         setUsers(cleanedData(data));
         setTotalUsers(mergedUsers(data));
         setDonutData([

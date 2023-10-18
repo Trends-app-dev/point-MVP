@@ -39,14 +39,12 @@ const CompanyFeed = () => {
   //         await axios.post(URL+getUniqueQueryString(),{withCredentials: "include"});
   //         navigate('/')
   //     }catch(error){
-  //         console.log("error al salir: ", error.message)
+  //         console.error("error al salir: ", error.message)
   //     }
   // };
 
   //Cambio de pagina para editar una oferta laboral
   const handlePageEditJob = (namepage, data) => {
-    console.log("que recibe data: ", data);
-    console.log("que recibe namepage: ", namepage);
     setJobEdit(data);
 
     handlePage(namepage);
@@ -91,13 +89,11 @@ const CompanyFeed = () => {
       const { data } = await axios.get(URL + getUniqueQueryString(), {
         withCredentials: "include",
       });
-      //dispatch()
-      console.log("que trae data <FeedCompany>: ", data);
       dispatch(addCompany(data));
       //setJobs(data.jobs)
       await new Promise((resolve) => setTimeout(resolve, 100));
     } catch (error) {
-      console.log("error al cargar datos a SG <FeedCompany>: ", error.message);
+      console.error("error al cargar datos a SG <FeedCompany>: ", error.message);
     }
   };
 
@@ -112,7 +108,7 @@ const CompanyFeed = () => {
       setJobs(dataJob.data);
       await new Promise((resolve) => setTimeout(resolve, 100));
     } catch (error) {
-      console.log("Error al traer los JOBS <FeedCompany>: ", error.message);
+      console.error("Error al traer los JOBS <FeedCompany>: ", error.message);
     }
   };
 

@@ -40,7 +40,6 @@ const Feed = () => {
   const [userToAddToGroup, setUserToAddToGroup] = useState(null);
   const MySwal = withReactContent(Swal);
 
-  console.log(darkMode);
   // Mensaje de aviso para completar el perfil
   useEffect(() => {
     profile?.kind === "new" &&

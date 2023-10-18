@@ -65,7 +65,7 @@ const CompanyProfile = () => {
       dispatch(addCompany(data));
       //setJobs(data.jobs);
     } catch (error) {
-      console.log("error al cargar datos a SG <FeedCompany>: ", error.message);
+      console.error("error al cargar datos a SG <FeedCompany>: ", error.message);
     }
   };
 
@@ -79,14 +79,11 @@ const CompanyProfile = () => {
     //envio datos
     try {
       await axios.put(URL, data, { withCredentials: "include" });
-
       await fetchCompany();
-      navigate("/company/feed");
 
-      // console.log("que tiene el SG company:", companyDataSG);
-      // console.log("que tiene companyData:", companyData);
+      navigate("/company/feed");
     } catch (error) {
-      console.log("error en put: ", error.message);
+      console.error("error en put: ", error.message);
     }
 
     //cambio a false edicion de perfil
@@ -135,10 +132,9 @@ const CompanyProfile = () => {
       try {
         const response = await fetch("../src/data/country.json");
         const jsonData = await response.json();
-        //console.log("que trae json data countrys: ", jsonData);
         setCountrys(jsonData);
       } catch (error) {
-        console.log("error al cargar countrys: ", error.message);
+        console.error("error al cargar countrys: ", error.message);
       }
     };
     getCountrys();
@@ -158,7 +154,7 @@ const CompanyProfile = () => {
         setImageload(response.data);
       })
       .catch((error) => {
-        console.log("error al cargar imagen: ", error);
+        console.error("error al cargar imagen: ", error);
       });
   };
 
@@ -184,7 +180,7 @@ const CompanyProfile = () => {
       });
       await fetchCompany();
     } catch (error) {
-      console.log("error al subir imagen: ", error.message);
+      console.error("error al subir imagen: ", error.message);
     }
   };
 

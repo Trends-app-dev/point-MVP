@@ -9,10 +9,9 @@ const JobInfo = ({ formJob, handleChangeForm, handleChangeSelect }) => {
       try {
         const response = await fetch("../../../../src/data/data.json");
         const jsonData = await response.json();
-        //console.log("que trae jsonData: ", jsonData);
         setData(jsonData);
       } catch (error) {
-        console.log("error al leer data.json: ", error.message);
+        console.error("error al leer data.json: ", error.message);
       }
     };
     fetchdata();

@@ -101,8 +101,6 @@ export const JobForm = ({ jobEdit, companyId, handlePage }) => {
     }
 
     if (name === "closingDate") {
-      console.log("->entra a closingDate");
-      console.log("que tiene value: ", value);
       if (value !== "") {
         setFormJob({ ...formJob, closingDate: value, active: false });
       } else {
@@ -156,7 +154,7 @@ export const JobForm = ({ jobEdit, companyId, handlePage }) => {
         await new Promise((res) => setTimeout(res, 100));
         handlePage("companyJobs");
       } catch (error) {
-        console.log("error post job: ", error.message);
+        console.error("error post job: ", error.message);
       }
     } else {
       //?NUEVA OFERTA LABORAL
@@ -167,7 +165,7 @@ export const JobForm = ({ jobEdit, companyId, handlePage }) => {
         await new Promise((res) => setTimeout(res, 100));
         handlePage("companyJobs");
       } catch (error) {
-        console.log("error post job: ", error.message);
+        console.error("error post job: ", error.message);
       }
     }
   };
@@ -190,7 +188,6 @@ export const JobForm = ({ jobEdit, companyId, handlePage }) => {
   //?AL MONTARSE EL COMPONENTE|
   useEffect(() => {
     if (jobEdit) {
-      console.log(">> jobEdit tiene datos");
       setFormJob({
         jobName: jobEdit.jobName,
         creationDate: jobEdit.creationDate,
@@ -208,8 +205,6 @@ export const JobForm = ({ jobEdit, companyId, handlePage }) => {
         availability: jobEdit.availability,
         contract_offered: jobEdit.contractOffered,
       });
-    } else {
-      console.log(">> jobEdit NO Ttiene datos");
     }
   }, []);
 

@@ -23,7 +23,6 @@ export const useCreateAdmin = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (inputs.username && inputs.password) {
-      // console.log(inputs)
       try {
         const response = await axios.post(
           `${VITE_URL}/admin/create`,
@@ -33,9 +32,7 @@ export const useCreateAdmin = () => {
           }
         );
         setCreateAdmin(response.data);
-        // console.log(response);
       } catch (error) {
-        // console.log(error.response.data);
         setCreateAdmin(error.response.data);
       }
     }
