@@ -12,7 +12,6 @@ const {
 } = require("../config");
 
 const sequelize = new Sequelize(
-	// `postgres://bcfdnmla:38z3qK5_JwdmXzgskkAOn9e_XyGTXoZy@tai.db.elephantsql.com/bcfdnmla`,
 	`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?sslmode=require`,
 	{
 		logging: false,
