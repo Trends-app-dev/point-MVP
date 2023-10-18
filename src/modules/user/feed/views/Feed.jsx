@@ -19,7 +19,6 @@ import {
 import { GroupChatListModal } from "../../../chat/modals";
 import { ProfileUpdateModal } from "../../profile";
 import { FeedCard, FloatingButton } from "../components";
-import style from "./Feed.module.css";
 
 /**
  * Componente de carga del "feed" de usuarios.
@@ -129,18 +128,24 @@ const Feed = () => {
 
   return (
     <>
-      <section className={style.BGContainer}>
+      <section id="bg-container" className="relative flex dark:bg-[#242424]">
         {isEditing && (
-          <div className={style.EditPhoto}>
+          <div>
             <ProfileUpdateModal handleCancelButton={handleCancelButton} />
           </div>
         )}
 
-        <div className={style.Container}>
-          <header>
-            <img src={logoBlancoBig} />
+        <div id="container" className="ml-[3rem] w-full">
+          <header className="header z-50 bg-blue-500 h-16 flex items-center justify-center backdrop-blur-md sticky top-0 animate-adjust-header select-none dark:bg-[#232323]">
+            <img
+              className="max-w-11 transition-max-w duration-300 ease-in-out"
+              src={logoBlancoBig}
+            />
           </header>
-          <div className={style.Feed}>
+          <div
+            id="feed"
+            className="bg-white px-[1.3rem] py-[2.7rem] dark:bg-[#343436]"
+          >
             <AnimateGroup play>
               {users &&
                 users.length > 0 &&
@@ -161,7 +166,9 @@ const Feed = () => {
                       />
 
                       {/* Línea divisora si no es el último usuario */}
-                      {userIndex < users.length - 1 && <hr />}
+                      {userIndex < users.length - 1 && (
+                        <hr className="border-t-0 border-solid border-gray-300 my-4 w-full" />
+                      )}
                     </div>
                   </Animate>
                 ))}
