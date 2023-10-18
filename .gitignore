@@ -16,20 +16,11 @@ users.js
 pnpm-lock.yaml
 package-lock.json
 
-#IMG IGNORE
-/api/src/uploads
-
-#API IGNORE
-/api/node_modules
-/api/.env
-
 #CLIENT IGNORE
-/client/public
-/client/node_modules
-/client/notes.txt
-/client/*.config.js
-/client/*.config
-/client/.env
+/public
+/node_modules
+/notes.txt
+/.env
 
 # Logs
 logs
@@ -58,6 +49,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Config files
-*.config.js
