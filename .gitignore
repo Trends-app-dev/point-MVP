@@ -17,11 +17,11 @@ pnpm-lock.yaml
 package-lock.json
 
 #IMG IGNORE
-/api/src/uploads
+/src/uploads
 
 #API IGNORE
-/api/node_modules
-/api/.env
+/node_modules
+/.env
 
 #CLIENT IGNORE
 /client/public
