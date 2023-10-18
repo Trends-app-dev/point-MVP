@@ -1,13 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiAcademicCap, HiBriefcase, HiChat, HiUser } from "react-icons/hi";
 import styles from "./Candidates.module.css";
 
-export const Candidates = ({
-  jobId,
-  jobName,
-  handlePageProfileCandidate,
-}) => {
+export const Candidates = ({ jobId, jobName, handlePageProfileCandidate }) => {
   const calcularEdad = (fechaNacimiento) => {
     const fechaNacObj = new Date(fechaNacimiento);
     const fechaActual = new Date();

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./JobInfo.module.css";
 
 const JobInfo = ({ formJob, handleChangeForm, handleChangeSelect }) => {

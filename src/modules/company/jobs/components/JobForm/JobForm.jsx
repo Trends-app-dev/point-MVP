@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import styles from "./JobForm.module.css";
+import React, { useEffect, useState } from "react";
 import JobData from "./JobData/JobData";
+import styles from "./JobForm.module.css";
 import JobInfo from "./JobInfo/JobInfo";
 const { VITE_URL } = import.meta.env;
 

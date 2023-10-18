@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./CandidateProfile.module.css";
 const { VITE_URL } = import.meta.env;
 

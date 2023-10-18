@@ -6,6 +6,7 @@ import {
   TabPanel,
   TabPanels,
 } from "@tremor/react";
+import React from "react";
 import { useStats } from "../hooks/useStats";
 import {
   AllUsersCharts,
@@ -14,7 +15,6 @@ import {
   ProfessionalsCharts,
   StudentsCharts,
 } from "./index";
-
 const STUDENT = "student";
 const PROFESSIONAL = "professional";
 // const ALL_USERS = "all";

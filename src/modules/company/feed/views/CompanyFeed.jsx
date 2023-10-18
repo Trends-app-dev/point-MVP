@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addCompany } from "../../../../redux/usersSlice";
 import Chat from "../../../../modules/chat/views/Chat";
+import { addCompany } from "../../../../redux/usersSlice";
 import { CandidateProfile, Candidates } from "../../candidates";
 import { CompanyJobs, JobForm } from "../../jobs";
 import { CompanyProfile } from "../../profile";
