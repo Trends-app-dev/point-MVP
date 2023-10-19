@@ -15,6 +15,7 @@ const {
   DB_HOST,
   DB_PORT,
   DB_NAME,
+  SELF_HOST,
 } = process.env;
 
 module.exports = {
@@ -32,4 +33,5 @@ module.exports = {
   DB_HOST,
   DB_PORT,
   DB_NAME,
+  SELF_HOST,
 };

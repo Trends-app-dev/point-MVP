@@ -3,6 +3,7 @@ const { getUserById } = require("../search.controllers");
 const { putUserProfile } = require("../user.controllers");
 const path = require("path");
 const fs = require("fs");
+const { SELF_HOST } = require("../../../config");
 
 module.exports = async (userId, userType, filename, filepath) => {
   let typeOfId;
@@ -13,7 +14,7 @@ module.exports = async (userId, userType, filename, filepath) => {
     typeOfId = "companyId";
   } else typeOfId = "adminId";
 
-  const imageUrl = `/api/v1/images/files/${filename}`;
+  const imageUrl = `${SELF_HOST}/api/v1/images/files/${filename}`;
 
   const savedImage = await Image.create({
     [typeOfId]: userId,
