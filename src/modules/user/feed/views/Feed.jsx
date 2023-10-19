@@ -128,7 +128,7 @@ const Feed = () => {
 
   return (
     <>
-      <section id="bg-container" className="relative flex dark:bg-[#242424]">
+      <section id="bg-container" className="w-full h-full relative flex dark:bg-[#242424]">
         {isEditing && (
           <div>
             <ProfileUpdateModal handleCancelButton={handleCancelButton} />
