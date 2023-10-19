@@ -16,20 +16,9 @@ users.js
 pnpm-lock.yaml
 package-lock.json
 
-#IMG IGNORE
-/src/uploads
-
 #API IGNORE
 /node_modules
 /.env
-
-#CLIENT IGNORE
-/client/public
-/client/node_modules
-/client/notes.txt
-/client/*.config.js
-/client/*.config
-/client/.env
 
 # Logs
 logs
