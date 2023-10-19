@@ -31,7 +31,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 config
-tailwind.config.js
 vite.config.js
 refs/remotes/origin/main
 node_modules
