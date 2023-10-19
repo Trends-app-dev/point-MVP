@@ -128,10 +128,7 @@ const Feed = () => {
 
   return (
     <>
-      <section
-        id="bg-container"
-        className="relative flex dark:bg-[#242424] sm:w-screen"
-      >
+      <section id="bg-container" className="relative flex dark:bg-[#242424]">
         {isEditing && (
           <div>
             <ProfileUpdateModal handleCancelButton={handleCancelButton} />
@@ -140,14 +137,14 @@ const Feed = () => {
 
         <div
           id="container"
-          className="ml-[3rem] w-full md:ml-0 md:header-hidden md:mt-60"
+          className="ml-[3rem] w-full max-md:ml-0 max-md:mt-7"
         >
-          <header className="z-[111] bg-[#58c9e5] h-[6rem] items-center justify-center backdrop-blur-[5px] sticky top-[-33px] select-none dark:bg-[#232323] hidden md:flex">
+          <header className="z-[111] bg-[#58c9e5] h-[6rem] items-center justify-center select-none dark:bg-[#232323] hidden md:flex">
             <img className="max-w-[4.4rem]" src={logoBlancoBig} />
           </header>
           <div
             id="feed"
-            className="bg-white px-[1.3rem] py-[2.7rem] dark:bg-[#343436] sm:py-0 sm:px-2"
+            className="bg-white px-[1.3rem] py-[2.7rem] dark:bg-[#343436] sm:py-1 sm:px-2"
           >
             <AnimateGroup play>
               {users &&
