@@ -3,7 +3,7 @@ const { validateUser } = require("../../controllers/auth.controllers");
 
 module.exports = async (req, res) => {
 	const userData = req.body;
-	console.log("ENTRO A LOGIN", userData);
+	
 	try {
 		const token = await validateUser(userData);
 		if (!token) {
